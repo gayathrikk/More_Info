@@ -11,6 +11,8 @@ public class MoreInfo {
 	@Test(priority = 1)
 	public void dgx_Request() {
 	    Response response = RestAssured.get("http://dgx3.humanbrain.in:1947/api/v1/describe?biosample_id=142");
+	    String url="http://dgx3.humanbrain.in:1947/api/v1/describe?biosample_id=142";
+	    System.out.println("The URL is : "+url );
 	    int statusCode = response.getStatusCode();
 	    String responseBody = response.asString();
 
@@ -30,6 +32,8 @@ public class MoreInfo {
 	        
 	       
 	        Response response2 = RestAssured.get("https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52");
+	        String url="https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52";
+	        System.out.println("The URL is :"+url);
 	        int statusCode2 = response2.getStatusCode();
 	        String responseBody = response2.asString();
 	        

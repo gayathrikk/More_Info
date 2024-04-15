@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-15T17:42:40 IST" name="Default suite" finished-at="2024-04-15T17:42:41 IST" duration-ms="1272">
+  <suite started-at="2024-04-15T18:01:56 IST" name="Default suite" finished-at="2024-04-15T18:01:57 IST" duration-ms="1172">
     <groups>
     </groups>
-    <test started-at="2024-04-15T17:42:40 IST" name="Default test" finished-at="2024-04-15T17:42:41 IST" duration-ms="1272">
+    <test started-at="2024-04-15T18:01:56 IST" name="Default test" finished-at="2024-04-15T18:01:57 IST" duration-ms="1172">
       <class name="com.apollo2.apollo2_Homepage.MoreInfo">
-        <test-method signature="dgx_Request()[pri:1, instance:com.apollo2.apollo2_Homepage.MoreInfo@6da21078]" started-at="2024-04-15T17:42:40 IST" name="dgx_Request" finished-at="2024-04-15T17:42:41 IST" duration-ms="1020" status="PASS">
+        <test-method signature="dgx_Request()[pri:1, instance:com.apollo2.apollo2_Homepage.MoreInfo@6da21078]" started-at="2024-04-15T18:01:56 IST" name="dgx_Request" finished-at="2024-04-15T18:01:57 IST" duration-ms="936" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- dgx_Request -->
-        <test-method signature="apollo2_Request()[pri:2, instance:com.apollo2.apollo2_Homepage.MoreInfo@6da21078]" started-at="2024-04-15T17:42:41 IST" name="apollo2_Request" finished-at="2024-04-15T17:42:41 IST" duration-ms="232" status="PASS">
+        <test-method signature="apollo2_Request()[pri:2, instance:com.apollo2.apollo2_Homepage.MoreInfo@6da21078]" started-at="2024-04-15T18:01:57 IST" name="apollo2_Request" finished-at="2024-04-15T18:01:57 IST" duration-ms="216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- apollo2_Request -->
