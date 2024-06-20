@@ -10,7 +10,7 @@ public class MoreInfo {
 	
 	@Test(priority = 1)
 	public void dgx_Request() {
-	    Response response = RestAssured.get("http://dgx3.humanbrain.in:1947/api/v1/describe?biosample_id=142");
+	    Response response = RestAssured.get("http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142");
 	    String url="http://dgx3.humanbrain.in:1947/api/v1/describe?biosample_id=142";
 	    System.out.println("The URL is : "+url );
 	    int statusCode = response.getStatusCode();
