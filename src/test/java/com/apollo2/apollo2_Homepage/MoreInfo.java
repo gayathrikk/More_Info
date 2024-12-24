@@ -2,62 +2,49 @@ package com.apollo2.apollo2_Homepage;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import io.restassured.RestAssured;
-import io.restassured.config.HttpClientConfig;
 import io.restassured.response.Response;
 
 public class MoreInfo {
+	
+	@Test(priority = 1)
+	public void dgx_Request() {
+	    Response response = RestAssured.get("http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142");
+	    String url="http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142";
+	    System.out.println("The URL is : "+url );
+	    int statusCode = response.getStatusCode();
+	    String responseBody = response.asString();
 
-    // Helper method to configure and make API requests
-    private Response makeRequest(String url) {
-        try {
-            return RestAssured
-                    .given()
-                    .config(RestAssured.config()
-                            .httpClient(HttpClientConfig.httpClientConfig()
-                                    .setParam("http.connection.timeout", 5000)  // Connection timeout (5 seconds)
-                                    .setParam("http.socket.timeout", 5000)))    // Socket timeout (5 seconds)
-                    .get(url);
-        } catch (Exception e) {
-            System.err.println("Failed to connect to URL: " + url);
-            e.printStackTrace();
-            return null;
-        }
-    }
+	    if (statusCode == 200) {
+	        System.out.println("API request of more info on dgx3 passed. Status code: " + statusCode);
+	        System.out.println("Response Body: " + responseBody);
+	    } else {
+	        System.out.println("API request of more info on dgx3 failed. Status code: " + statusCode);
+	    }
+	    
+	    Assert.assertEquals(statusCode, 200, "API request of more info on dgx3 failed");
+	}
 
-    // Helper method to validate API response
-    private void validateResponse(String url, Response response, int expectedStatusCode) {
-        if (response == null) {
-            Assert.fail("No response received for URL: " + url);
-        }
+	 @Test(priority=2)
+	 public void apollo2_Request()
+	 {
+	        
+	       
+	        Response response2 = RestAssured.get("https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52");
+	        String url="https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52";
+	        System.out.println("The URL is :"+url);
+	        int statusCode2 = response2.getStatusCode();
+	        String responseBody = response2.asString();
+	        
+	        if (statusCode2 == 200) {
+	            System.out.println("API request of more info on apollo2 passed. Status code: " + statusCode2);
+	            System.out.println("Response Body: " + responseBody);
+	        } else {
+	            System.out.println("API request of more info on apollo2 failed. Status code: " + statusCode2);
+	        }
+	        Assert.assertEquals(statusCode2, 200, "API request of more info on apollo2 failed");
+	        
+	 }
 
-        int statusCode = response.getStatusCode();
-        String responseBody = response.asString();
-
-        System.out.println("The URL is: " + url);
-        System.out.println("Status Code: " + statusCode);
-        System.out.println("Response Body: " + responseBody);
-
-        if (statusCode == expectedStatusCode) {
-            System.out.println("API request passed. Status code: " + statusCode);
-        } else {
-            System.out.println("API request failed. Status code: " + statusCode);
-        }
-
-        Assert.assertEquals(statusCode, expectedStatusCode, "Unexpected status code for URL: " + url);
-    }
-
-    @Test(priority = 1)
-    public void dgx_Request() {
-        String url = "http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142";
-        Response response = makeRequest(url);
-        validateResponse(url, response, 200);
-    }
-
-    @Test(priority = 2)
-    public void apollo2_Request() {
-        String url = "https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52";
-        Response response = makeRequest(url);
-        validateResponse(url, response, 200);
-    }
 }
