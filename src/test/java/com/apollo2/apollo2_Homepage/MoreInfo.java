@@ -3,18 +3,20 @@ package com.apollo2.apollo2_Homepage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.RestAssured;
+import io.restassured.config.HttpClientConfig;
 import io.restassured.response.Response;
 
 public class MoreInfo {
 
-    private static final int TIMEOUT = 5000; // 5 seconds timeout
-
-    // Helper method to make API requests
+    // Helper method to configure and make API requests
     private Response makeRequest(String url) {
         try {
             return RestAssured
                     .given()
-                    .timeout(TIMEOUT)
+                    .config(RestAssured.config()
+                            .httpClient(HttpClientConfig.httpClientConfig()
+                                    .setParam("http.connection.timeout", 5000)  // Connection timeout (5 seconds)
+                                    .setParam("http.socket.timeout", 5000)))    // Socket timeout (5 seconds)
                     .get(url);
         } catch (Exception e) {
             System.err.println("Failed to connect to URL: " + url);
