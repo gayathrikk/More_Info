@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 
 public class MoreInfo {
 	
-	@Test(priority = 1 , Enabled=0)
+	@Test(priority = 1 , Enable=0)
 	public void dgx_Request() {
 	    Response response = RestAssured.get("http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142");
 	    String url="http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142";
