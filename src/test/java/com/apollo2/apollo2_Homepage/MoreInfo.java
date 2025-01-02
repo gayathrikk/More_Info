@@ -31,8 +31,8 @@ public class MoreInfo {
 	 {
 	        
 	       
-	        Response response2 = RestAssured.get("https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52");
-	        String url="https://apollo2.humanbrain.in/chat/api/v1/describe?biosample_id=52";
+	        Response response2 = RestAssured.get("https://apollo2.humanbrain.in/atlas/describe_brain/?biosample=219");
+	        String url="https://apollo2.humanbrain.in/atlas/describe_brain/?biosample=219";
 	        System.out.println("The URL is :"+url);
 	        int statusCode2 = response2.getStatusCode();
 	        String responseBody = response2.asString();
