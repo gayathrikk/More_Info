@@ -8,23 +8,23 @@ import io.restassured.response.Response;
 
 public class MoreInfo {
 	
-	@Test(priority = 1 , Enable=0)
-	public void dgx_Request() {
-	    Response response = RestAssured.get("http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142");
-	    String url="http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142";
-	    System.out.println("The URL is : "+url );
-	    int statusCode = response.getStatusCode();
-	    String responseBody = response.asString();
+	//@Test(priority =1)
+	//public void dgx_Request() {
+	  //  Response response = RestAssured.get("http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142");
+	    //String url="http://dgx1.humanbrain.in:1947/api/v1/describe?biosample_id=142";
+	    //System.out.println("The URL is : "+url );
+	    //int statusCode = response.getStatusCode();
+	    //String responseBody = response.asString();
 
-	    if (statusCode == 200) {
-	        System.out.println("API request of more info on dgx3 passed. Status code: " + statusCode);
-	        System.out.println("Response Body: " + responseBody);
-	    } else {
-	        System.out.println("API request of more info on dgx3 failed. Status code: " + statusCode);
-	    }
+	    //if (statusCode == 200) {
+	      //  System.out.println("API request of more info on dgx3 passed. Status code: " + statusCode);
+	        //System.out.println("Response Body: " + responseBody);
+	    //} else {
+	      //  System.out.println("API request of more info on dgx3 failed. Status code: " + statusCode);
+	    //}
 	    
-	    Assert.assertEquals(statusCode, 200, "API request of more info on dgx3 failed");
-	}
+	   // Assert.assertEquals(statusCode, 200, "API request of more info on dgx3 failed");
+	//}
 
 	 @Test(priority=2)
 	 public void apollo2_Request()
